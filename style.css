@@ -32,28 +32,32 @@ h2 {
   font-family: 'Big Shoulders Display';
   font-size: 2.5rem;
   text-transform: uppercase;
-  padding-top: calc(var(--spacer) * 3);
+  padding-top: calc(var(--spacer) * 2);
   background-image: var(--bg-img);
   background-repeat: no-repeat;
   background-position: left top;
 }
 
 .flow > * + * {
-  margin-top: calc(var(--spacer) * 2);
+  margin-top: calc(var(--spacer) * 1.5);
 }
 
 .card-list {
   display: flex;
+  justify-content: space-between;
+  gap: var(--spacer);
+  /* flex-direction: column; */
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   color: white;
   background-color: var(--bg-color, black);
+  max-width: 327px;
   padding: 2.5em;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -83,6 +87,16 @@ button {
   border: none;
   width: max-content;
   color: var(--bg-color);
+  cursor: pointer;
+  border: 1px solid var(--bg-color);
+  transition: all 0.25s ease-in;
+}
+
+button:hover,
+button:active {
+  background-color: var(--bg-color);
+  color: var(--white);
+  border: 1px solid var(--white);
 }
 
 .attribution {
@@ -92,4 +106,10 @@ button {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 750px) {
+  .card-list {
+    flex-wrap: wrap;
+  }
 }
